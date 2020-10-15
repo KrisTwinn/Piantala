@@ -7,27 +7,34 @@ Visualizzazione profilo personale (admin,contadino,utente registrato)
 Modifica password (admin,contadino,utente registrato)
 Modifica dati personali (admin,contadino,utente registrato)
 Recupera password (admin,contadino,utente registrato)
+Richiesta rimozione account(utente, admin)
 
 -Gestione Registrazione
 Registrazione di un utente (utente non registrato)
 Registrazione di un contadino (utente non registrato)
+Visualizza richieste(admin)
+Gestione richieste(admin)
 
 -Gestione Utenti 
 Visualizzazione utenti (admin)
 Ricerca Utenti (admin,contadino,utente registrato)
 Rimozione Utenti (admin)
 Modifica ruolo account (admin)
+
 Visualizzazione richieste prenotazione (admin,contadino)
 
 -Gestione Prenotazioni
-gestioneRichiesteEsitoPositivo (admin,contadino)
-gestioneRichiesteEsitoNegativo (admin, contadino)
-visualizzaOrdini(admin,contadino,utente registrato)
+Richiesta Prenotazione()
+Modifica Prenotazione(utente)
+Visualizza Prenotazione(utente)
+
+
 
 -Gestione Prodotti
 ricercaProdotti (admin,contadino,utente registrato)
 visualizzaProdotti (admin,contadino,utente registrato, utente non registrato)
 aggiuntaProdotto (admin,contadino)
 modificaProdotto (admin, contadino)
+visualizzaOrdini(admin,contadino,utente registrato)
 rimozioneProdotto (admin, contadino)
 visualizzaProdottiAggiunti (admin)
