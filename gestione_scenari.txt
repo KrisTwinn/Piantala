@@ -13,7 +13,7 @@ Richiesta rimozione account(utente, admin)
 Registrazione di un utente (utente non registrato)
 Registrazione di un contadino (utente non registrato)
 Visualizza richieste(admin)
-Gestione richieste(admin)
+*Gestione richieste(admin)
 
 -Gestione Utenti 
 Visualizzazione utenti (admin)
@@ -21,6 +21,8 @@ Ricerca Utenti (admin,contadino,utente registrato)
 Rimozione Utenti (admin)
 Modifica ruolo account (admin)
 
+
+-------DA FARE-------
 Visualizzazione richieste prenotazione (admin,contadino)
 
 -Gestione Prenotazioni
