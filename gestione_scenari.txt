@@ -7,7 +7,7 @@ Visualizzazione profilo personale (admin,contadino,utente registrato)
 Modifica password (admin,contadino,utente registrato)
 Modifica dati personali (admin,contadino,utente registrato)
 Recupera password (admin,contadino,utente registrato)
-Richiesta rimozione account(utente, admin)
+Richiesta rimozione account(utente, admin)-----
 
 -Gestione Registrazione
 Registrazione di un utente (utente non registrato)
@@ -39,4 +39,4 @@ aggiuntaProdotto (admin,contadino)
 modificaProdotto (admin, contadino)
 visualizzaOrdini(admin,contadino,utente registrato)
 rimozioneProdotto (admin, contadino)
-visualizzaProdottiAggiunti (admin)
+visualizzaProdottiAggiunti (admin)---------
