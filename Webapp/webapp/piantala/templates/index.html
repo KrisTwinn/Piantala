@@ -1,0 +1,14 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+  <h1>Project Piantala - Home</h1>
+  <p>Welcome to piantala.org, a website developed by <em>BigodinosBoy</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The piantala project has the following record counts:</p>
+  <ul>
+    <li><strong>Product:</strong> {{ num_products }}</li>
+    <li><strong>Variety:</strong> {{ num_instances }}</li>
+    <li><strong>Product available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Farmers:</strong> {{ num_farmers }}</li>
+  </ul>
+{% endblock %}
