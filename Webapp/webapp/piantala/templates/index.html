@@ -11,4 +11,6 @@
     <li><strong>Product available:</strong> {{ num_instances_available }}</li>
     <li><strong>Farmers:</strong> {{ num_farmers }}</li>
   </ul>
+  <p>Tu hai visitato la pagina  {{ num_visits }}{% if num_visits == 1 %} time{% else %} volte {% endif %}.</p>
+  {{ user }}
 {% endblock %}

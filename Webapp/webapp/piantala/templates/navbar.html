@@ -42,6 +42,7 @@
             carrello
           </a>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="navbar-brand" href="{% url 'index' %}">
             {% load static %}
@@ -49,6 +50,15 @@
             profilo
           </a>
         </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="navbar-brand" href="{% url 'login' %}">
+            {% load static %}
+            <img src="{% static 'images/profile-piantala2.png' %}" width="30" height="30" class="d-inline-block align-top" alt="##">
+            login
+          </a>
+        </li>
+        {% endif %}
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
