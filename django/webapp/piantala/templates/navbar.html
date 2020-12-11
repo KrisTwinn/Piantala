@@ -51,12 +51,21 @@
             <img src="{% static 'images/profile-piantala2.png' %}" width="30" height="30" class="d-inline-block align-top" alt="##">
             profilo
           </a>
+          {% if user.is_staff%}
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/admin">Pannello amministrazione</a>
+            <a class="dropdown-item" href="#">Impostazioni</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+          </div>
+          {% else %}
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Il mio profilo</a>
             <a class="dropdown-item" href="#">Impostazioni</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
           </div>
+          {% endif %}
         </li>
         {% else %}
         <li class="nav-item">

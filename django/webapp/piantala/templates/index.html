@@ -11,10 +11,16 @@
   </ul>
   <p>Tu hai visitato la pagina  {{ num_visits }}{% if num_visits == 1 %} time{% else %} volte {% endif %}.</p>
   <p>Questo è il tuo username: {{ user.username|default:'Iscriviti :D!' }}</p>
+  {% if user.is_staff %}
+  <p>fai parte dello staff di piantala</p>
+  {% else %}
+  <p>non fai parte dello staff</p>
+  {% endif %}
 
   <h2>Cosa è stato fatto fin ora:</h2>
   <p>admin = <strong>dipa:dipa</strong></p>
   <p>user = <strong>user:\123qwer</strong></p>
+
   <ul>
     <li>
       Pannello admin | Aggiungi,elimina,modifica qualunque record | Filtri record database in pannello admin
