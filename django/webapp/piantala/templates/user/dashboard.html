@@ -1,5 +1,14 @@
 {% extends "navbar.html" %}
+
 {% block content %}
+{% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+          {{ message }}
+      </div>
+    {% endfor %}
+{% endif %}
+<h2>DASHBOARD</h2></br>
 username: {{ user.username}}</br>
 email: {{ user.email}}</br>
 nome: {{ user.first_name}}</br>

@@ -1,11 +1,18 @@
 {% extends "navbar.html" %}
 
 {% block content %}
-<h2>Dashboard - Da qui controllare i tuoi dati e modificare il tuo profilo</h2>
+<h2>EDIT_PROFILE</h2>
+{% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert">
+          {{ message }}
+      </div>
+    {% endfor %}
+{% endif %}
 {% load crispy_forms_tags %}
 <form method="post">
     {% csrf_token %}
-    {{form|crispy}} </br>
+    {{form|crispy}}</br>
     <input type="submit" value="Aggiorna">
 </form>
 Per cambiare la password puoi usare questo <a href="{% url 'index' %}">change</a>

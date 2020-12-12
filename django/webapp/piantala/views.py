@@ -3,6 +3,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from piantala.forms import CustomUserCreationForm,EditProfileForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseNotFound
+from django.contrib import messages
 # Create your views here.
 from piantala.models import Product, Farmer, ProductInstance, Genre
 
@@ -51,8 +53,12 @@ def edit_profile(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'I dati sono stati salvati correttamente')
             return redirect(reverse('dashboard'))
-    else:
+        else: 
+            messages.warning(request, 'username già presente nel sistema')
+            return redirect('edit_profile')
+    elif request.method == "GET":
         form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'registration/edit_profile.html', args)
@@ -62,6 +68,9 @@ def user_dashboard(request):
     
     return render(request, "user/dashboard.html")
 
+def chi_siamo(request):
+
+    return render(request, "chi_siamo.html")
 #@login_required()
 #def whoami(request):
 #    return render(request, "registration/whoami.html")
