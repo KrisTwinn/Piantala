@@ -2,12 +2,12 @@
 
 {% block content %}
 <h2>Register</h2>
-
+{% load crispy_forms_tags %}
 <form method="post">
     {% csrf_token %}
-    {{form}}
+    {{form|crispy}}
     <input type="submit" value="Register">
 </form>
 
-<a href="{% url 'login' %}">Back to login</a>
+<a href="{% url 'login' %}">Torna al login</a>
 {% endblock %}

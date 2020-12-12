@@ -75,6 +75,12 @@ class Farmer(models.Model):
 
 
 #PROFILI estensione profilo utente
-#from django.contrib.auth.models import User
-#class UserProfile(models.Model):
-#    pass
+from django.contrib.auth.models import User
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.SET_NULL,null=True)
+    image = models.ImageField(upload_to="avatar" , default="")
+    indirizzo = models.CharField(max_length=50, default='')
+    città = models.CharField(max_length=50, default='')
+    CAP = models.IntegerField(default='')
+    telefono = models.IntegerField(default='')

@@ -1,7 +1,8 @@
 {% extends "navbar.html" %}
 
 {% block content %}
-  <h1>Progetto Piantala - Ingegneria del software - UNISA</h1>
+ <!-- 
+   <h1>Progetto Piantala - Ingegneria del software - UNISA</h1>
   <h2>Contenuti interessati:</h2>
   <p>Records in database:</p>
   <ul>
@@ -10,7 +11,8 @@
     <li><strong>Agricoltori associati:</strong> {{ num_farmers }}</li>
   </ul>
   <p>Tu hai visitato la pagina  {{ num_visits }}{% if num_visits == 1 %} time{% else %} volte {% endif %}.</p>
-  <p>Questo è il tuo username: {{ user.username|default:'Iscriviti :D!' }}</p>
+  -->
+  <p>Questo è il tuo username: {{ user.username|default:'Utente anonimo' }}</p>
   {% if user.is_staff %}
   <p>fai parte dello staff di piantala</p>
   {% else %}
@@ -24,6 +26,9 @@
   <ul>
     <li>
       Pannello admin | Aggiungi,elimina,modifica qualunque record | Filtri record database in pannello admin
+    </li>
+    <li>
+      Utente "responsabile" dello staff che può accedere solo a determinati records
     </li>
     <li>
       Visualizza tutti i prodotti | visualizza dettagli prodotto

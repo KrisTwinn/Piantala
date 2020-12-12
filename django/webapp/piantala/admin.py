@@ -2,13 +2,13 @@ from django.contrib import admin
 
 # Register your models here.
 
-from piantala.models import Farmer, Genre, Product, ProductInstance
+from piantala.models import Farmer, Genre, Product, ProductInstance,UserProfile
 
 #admin.site.register(Product)
 #admin.site.register(Farmer)
 admin.site.register(Genre)
 #admin.site.register(ProductInstance)
-
+admin.site.register(UserProfile)
 
 # Define the admin class
 class FarmerAdmin(admin.ModelAdmin):

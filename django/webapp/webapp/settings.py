@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'piantala',
+    'crispy_forms',
     'django.contrib.admin',
 ]
 
@@ -125,5 +126,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/piantala/dashboard/'
 LOGOUT_REDIRECT_URL = '/'

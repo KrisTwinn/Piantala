@@ -9,7 +9,7 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
+        <h5 class="card-title">{{ product.name }}  n.{{ product.id }}</h5>
         <p class="card-text">Venduto da: <a href="{% url 'farmer-detail' product.farmer.pk %}">{{ product.farmer }}</a></p>
         <a href="{{ product.get_absolute_url }}" class="btn btn-primary">Dettagli prodotto</a>
         {{ farmer.last_name}}
