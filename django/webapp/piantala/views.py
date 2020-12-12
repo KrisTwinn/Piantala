@@ -3,10 +3,9 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from piantala.forms import CustomUserCreationForm,EditProfileForm
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseNotFound
 from django.contrib import messages
-# Create your views here.
 from piantala.models import Product, Farmer, ProductInstance, Genre
+
 
 def index(request):
     """View function for home page of site."""
@@ -71,9 +70,6 @@ def user_dashboard(request):
 def chi_siamo(request):
 
     return render(request, "chi_siamo.html")
-#@login_required()
-#def whoami(request):
-#    return render(request, "registration/whoami.html")
 
 class ProductListView(generic.ListView):
     model = Product
