@@ -67,9 +67,9 @@ def user_dashboard(request):
     
     return render(request, "user/dashboard.html")
 
-def chi_siamo(request):
+def about_us(request):
 
-    return render(request, "chi_siamo.html")
+    return render(request, "about-us.html")
 
 class ProductListView(generic.ListView):
     model = Product
