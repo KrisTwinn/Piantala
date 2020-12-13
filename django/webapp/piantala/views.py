@@ -3,8 +3,9 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from piantala.forms import CustomUserCreationForm,EditProfileForm
 from django.contrib.auth.decorators import login_required
-# Create your views here.
+from django.contrib import messages
 from piantala.models import Product, Farmer, ProductInstance, Genre
+
 
 def index(request):
     """View function for home page of site."""
@@ -51,8 +52,12 @@ def edit_profile(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'I dati sono stati salvati correttamente')
             return redirect(reverse('dashboard'))
-    else:
+        else: 
+            messages.warning(request, 'username già presente nel sistema')
+            return redirect('edit_profile')
+    elif request.method == "GET":
         form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'registration/edit_profile.html', args)
@@ -62,9 +67,9 @@ def user_dashboard(request):
     
     return render(request, "user/dashboard.html")
 
-#@login_required()
-#def whoami(request):
-#    return render(request, "registration/whoami.html")
+def about_us(request):
+
+    return render(request, "about-us.html")
 
 class ProductListView(generic.ListView):
     model = Product

@@ -12,7 +12,13 @@ class CustomUserCreationForm(UserCreationForm):
     cognome = forms.CharField(max_length=50)
     class Meta:
         model = User
-        fields = ('username','nome','cognome','email','password1','password2')
+        fields = (  'username',
+                    'nome',
+                    'cognome',
+                    'email',
+                    'password1',
+                    'password2'
+                      )
         help_texts = {
             'username': None,
         }
@@ -23,8 +29,12 @@ class EditProfileForm(UserChangeForm):
     class Meta:
         model = User
         fields = (
+            'username',
             'email',
             'first_name',
             'last_name',
             #'password',
-        )
+                     )
+        help_texts = {
+            'username': None,
+        }

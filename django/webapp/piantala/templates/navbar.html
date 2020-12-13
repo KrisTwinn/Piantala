@@ -23,27 +23,6 @@
         home
       </a>
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="navbar-brand" href="{% url 'farmers' %}">
-            {% load static %}
-            <img src="{% static 'images/farmer-logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo-farmer">
-            agricoltori
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand" href="{% url 'products' %}">
-            {% load static %}
-            <img src="{% static 'images/product-piantala2.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo-basket">
-            prodotti
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand" href="{% url 'index' %}">
-            {% load static %}
-            <img src="{% static 'images/cart-piantala.png' %}" width="30" height="30" class="d-inline-block align-top" alt="##">
-            carrello
-          </a>
-        </li>
         {% if user.is_authenticated %}
         <li class="nav-item dropdown">
           <a class="navbar-brand" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,8 +39,8 @@
           </div>
           {% else %}
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'dashboard' %}">Il mio profilo</a>
-            <a class="dropdown-item" href="{% url 'edit_profile' %}">Impostazioni</a>
+            <a class="dropdown-item" href="{% url 'dashboard' %}">I miei dati</a>
+            <a class="dropdown-item" href="{% url 'edit_profile' %}">Modifica profilo</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
           </div>
@@ -76,6 +55,34 @@
           </a>
         </li>
         {% endif %}
+        <li class="nav-item">
+          <a class="navbar-brand" href="{% url 'index' %}">
+            {% load static %}
+            <img src="{% static 'images/cart-piantala.png' %}" width="30" height="30" class="d-inline-block align-top" alt="##">
+            carrello
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="{% url 'farmers' %}">
+            {% load static %}
+            <img src="{% static 'images/farmer-logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo-farmer">
+            agricoltori
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="{% url 'products' %}">
+            {% load static %}
+            <img src="{% static 'images/product-piantala2.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo-basket">
+            prodotti
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="{% url 'about_us' %}">
+            {% load static %}
+            <img src="{% static 'images/about-us.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo-basket">
+            chi siamo
+          </a>
+        </li>
       </ul>
       <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
