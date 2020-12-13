@@ -1,11 +1,11 @@
 from django.views import generic
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from piantala.forms import CustomUserCreationForm,EditProfileForm
+from piantala.forms import UserCreationForm,UserChangeForm
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from piantala.models import Product, Farmer, ProductInstance, Genre
-
+from piantala.models import Product, Farmer, ProductInstance, Genre, User
 
 def index(request):
     """View function for home page of site."""
@@ -36,19 +36,21 @@ def register(request):
     if request.method == "GET":
         return render(
             request, "registration/register.html",
-            {"form": CustomUserCreationForm}
+            {"form": UserCreationForm}
         )
     elif request.method == "POST":
-        form = CustomUserCreationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect(reverse("login"))
+            return redirect(reverse("dashboard"))
+        else:
+            return redirect('register')
 
 @login_required()
 def edit_profile(request):
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
+        form = UserChangeForm(request.POST, instance=request.user)
 
         if form.is_valid():
             form.save()
@@ -58,7 +60,7 @@ def edit_profile(request):
             messages.warning(request, 'username già presente nel sistema')
             return redirect('edit_profile')
     elif request.method == "GET":
-        form = EditProfileForm(instance=request.user)
+        form = UserChangeForm(instance=request.user)
         args = {'form': form}
         return render(request, 'registration/edit_profile.html', args)
 

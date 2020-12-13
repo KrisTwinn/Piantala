@@ -1,12 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from piantala.models import User
 from django import forms
 
-class CustomUserCreationForm(UserCreationForm):
-    #class Meta(UserCreationForm.Meta):
-    #    fields = UserCreationForm.Meta.fields + ("email",)
-    #    fields = UserCreationForm.Meta.fields + ("first_name",)
-    #    fields = UserCreationForm.Meta.fields + ("last_name",)
+class UserCreationForm(UserCreationForm):
     email = forms.EmailField()
     nome = forms.CharField(max_length=50)
     cognome = forms.CharField(max_length=50)
@@ -15,15 +12,18 @@ class CustomUserCreationForm(UserCreationForm):
         fields = (  'username',
                     'nome',
                     'cognome',
+                    'data_di_nascita',
+                    'indirizzo',
+                    'cellulare',
                     'email',
                     'password1',
-                    'password2'
+                    'password2',
                       )
         help_texts = {
             'username': None,
         }
 
-class EditProfileForm(UserChangeForm):
+class UserChangeForm(UserChangeForm):
     template_name='/accounts/edit_profile'
     password = None
     class Meta:
@@ -33,6 +33,7 @@ class EditProfileForm(UserChangeForm):
             'email',
             'first_name',
             'last_name',
+            'indirizzo',
             #'password',
                      )
         help_texts = {
