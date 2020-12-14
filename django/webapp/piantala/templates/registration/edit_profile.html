@@ -1,5 +1,5 @@
 {% extends "navbar.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 <h2>EDIT_PROFILE</h2>
 {% if messages %}
@@ -9,10 +9,11 @@
       </div>
     {% endfor %}
 {% endif %}
-{% load crispy_forms_tags %}
-<form method="post">
+
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form|crispy}}</br>
+    {{form.as_p}}</br>
+   <!-- {{ avatar_form.as_p }} -->
     <input type="submit" value="Aggiorna">
 </form>
 Per cambiare la password puoi usare questo <a href="{% url 'index' %}">change</a>

@@ -1,8 +1,14 @@
 from django.contrib import admin
 from piantala.models import Farmer, Genre, Product, ProductInstance
-admin.site.register(Genre)
+from django.contrib.auth.admin import UserAdmin
+from .models import ProfileUser
+from .forms import UserCreationForm,UserChangeForm,AdminCreationForm
+
 
 # Define the admin class
+
+admin.site.register(Genre)
+
 class FarmerAdmin(admin.ModelAdmin):
      list_display = ('last_name', 'first_name', 'farm_loc')
 
@@ -20,12 +26,9 @@ class ProductInstanceAdmin(admin.ModelAdmin):
     list_display = ('product', 'status', 'id')
     list_filter = ('status', 'product')
 
-from django.contrib.auth.admin import UserAdmin
-from .models import User
-from .forms import UserCreationForm,UserChangeForm
-class UserAdmin(UserAdmin):
-    add_form = UserCreationForm
-    form = UserChangeForm
-    model = User
-    list_display = ['email', 'username','first_name','last_name','cellulare','indirizzo','data_di_nascita','is_staff','is_superuser']
-admin.site.register(User, UserAdmin)
+class UserAdmin(admin.ModelAdmin):
+    add_form = AdminCreationForm
+    form = AdminCreationForm
+    model = ProfileUser
+    list_display = ['email', 'username','first_name','last_name','cellulare','indirizzo','data_di_nascita','is_staff','is_superuser','image']
+admin.site.register(ProfileUser, UserAdmin)

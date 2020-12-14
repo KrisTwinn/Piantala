@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-AUTH_USER_MODEL = 'piantala.User'
+AUTH_USER_MODEL = 'piantala.ProfileUser'
 
 INSTALLED_APPS = [
     'django.contrib.auth',
@@ -128,5 +128,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/piantala/dashboard/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

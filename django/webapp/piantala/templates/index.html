@@ -12,32 +12,16 @@
   </ul>
   <p>Tu hai visitato la pagina  {{ num_visits }}{% if num_visits == 1 %} time{% else %} volte {% endif %}.</p>
   -->
-  <p>Questo è il tuo username: {{ user.username|default:'Utente anonimo' }}</p>
+  <strong>Restituisci dati dalla sessione</strong>
+  <p>Questo è il tuo username: <strong>{{ user.username|default:'Utente anonimo' }}</strong></p>
   {% if user.is_staff %}
-  <p>fai parte dello staff di piantala</p>
+  <strong>(O)fai parte dello staff di piantala</strong></br></br>
   {% else %}
-  <p>non fai parte dello staff</p>
+  <strong>(X) non fai parte dello staff</strong></br></br>
   {% endif %}
-
-  <h2>Cosa è stato fatto fin ora:</h2>
-  <p>admin = <strong>dipa:dipa</strong></p>
-  <p>user = <strong>user:\123qwer</strong></p>
-
-  <ul>
-    <li>
-      Pannello admin | Aggiungi,elimina,modifica qualunque record | Filtri record database in pannello admin
-    </li>
-    <li>
-      Utente "responsabile" dello staff che può accedere solo a determinati records
-    </li>
-    <li>
-      Visualizza tutti i prodotti | visualizza dettagli prodotto
-    </li>
-    <li>
-      Visualizza tutti gli agricoltori | visualizza dettagli agricoltore
-    </li>
-    <li>
-      Registrazione | Login | Logout
-    </li>
-  </ul>
+  <strong>-------------------------------</strong></br></br>
+<strong>username : admin | password : dipa</br>
+username : responsabile | password : dipa</br>
+username : utente | password : dipa </strong></br>
+username : utente2 | password : dipa </strong>
 {% endblock %}

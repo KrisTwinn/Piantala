@@ -5,7 +5,7 @@ from piantala.forms import UserCreationForm,UserChangeForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from piantala.models import Product, Farmer, ProductInstance, Genre, User
+from piantala.models import Product, Farmer, ProductInstance, Genre, ProfileUser
 
 def index(request):
     """View function for home page of site."""
@@ -45,15 +45,18 @@ def register(request):
             login(request, user)
             return redirect(reverse("dashboard"))
         else:
-            return redirect('register')
+            return redirect('index')
 
 @login_required()
 def edit_profile(request):
     if request.method == 'POST':
-        form = UserChangeForm(request.POST, instance=request.user)
+        form = UserChangeForm(instance=request.user,data=request.POST,files=request.FILES)
+        #avatar_form = AvatarEditForm(instance=request.user,data=request.POST,files=request.FILES) 
 
         if form.is_valid():
+            #and avatar_form.is_valid()
             form.save()
+            #avatar_form.save()
             messages.success(request, 'I dati sono stati salvati correttamente')
             return redirect(reverse('dashboard'))
         else: 
@@ -61,12 +64,15 @@ def edit_profile(request):
             return redirect('edit_profile')
     elif request.method == "GET":
         form = UserChangeForm(instance=request.user)
+        #avatar_form = AvatarEditForm(instance=request.user) 
         args = {'form': form}
+        # 'avatar_form': avatar_form
         return render(request, 'registration/edit_profile.html', args)
+
+
 
 @login_required()
 def user_dashboard(request):
-    
     return render(request, "user/dashboard.html")
 
 def about_us(request):
