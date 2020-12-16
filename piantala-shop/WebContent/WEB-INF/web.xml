@@ -76,6 +76,14 @@
      <servlet-name>DBconnection</servlet-name>
      <url-pattern>/DBconnection/</url-pattern>
  </servlet-mapping>
- 
+<servlet>
+	<display-name>Registration</display-name>
+    <servlet-name>Registration</servlet-name>
+    <servlet-class>it.unisa.is20.piantalashop.controller</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>Registration</servlet-name>
+     <url-pattern>/Registration/</url-pattern>
+</servlet-mapping>
  
 </web-app>
