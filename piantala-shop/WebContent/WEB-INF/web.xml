@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>piantala-shop</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+      <!-- risorsa non trovata 
+<error-page>
+<error-code>404</error-code>
+    <location>/404.html</location>
+</error-page>
+
+
+<error-page>
+    <error-code>500</error-code>
+    <location>/500.html</location>
+</error-page>
+
+<error-page>
+    <error-code>405</error-code>
+    <location>/405.html</location>
+</error-page> -->
+ <!-- Ruoli -->
+ 
+<security-role>
+    <role-name>admin</role-name>
+</security-role>
+<security-role>
+    <role-name>user</role-name>
+</security-role>
+
+<login-config>
+<auth-method>FORM</auth-method>
+<realm-name>default</realm-name>
+<form-login-config>
+<form-login-page>/login.jsp</form-login-page>
+<form-error-page>/error.jsp</form-error-page>
+</form-login-config>
+</login-config>  
+  	
+  <servlet>
+     <display-name>LoginServlet</display-name>
+     <servlet-name>LoginServlet</servlet-name>
+     <servlet-class>it.unisa.is20.piantalashop.controller</servlet-class>
+ </servlet>
+  <servlet-mapping>
+     <servlet-name>LoginServlet</servlet-name>
+     <url-pattern>/LoginServlet/</url-pattern>
+ </servlet-mapping>
+ <servlet>
+     <display-name>LoginDao</display-name>
+     <servlet-name>LoginDao</servlet-name>
+     <servlet-class>it.unisa.is20.piantalashop.daos</servlet-class>
+ </servlet>
+  <servlet-mapping>
+     <servlet-name>LoginDao</servlet-name>
+     <url-pattern>/LoginDao/</url-pattern>
+ </servlet-mapping>
+ <servlet>
+     <display-name>LoginBean</display-name>
+     <servlet-name>LoginBean</servlet-name>
+     <servlet-class>it.unisa.is20.piantalashop.beans</servlet-class>
+ </servlet>
+  <servlet-mapping>
+     <servlet-name>LoginBean</servlet-name>
+     <url-pattern>/LoginBean/</url-pattern>
+ </servlet-mapping>
+  <servlet>
+     <display-name>DBconnection</display-name>
+     <servlet-name>DBconnection</servlet-name>
+     <servlet-class>it.unisa.is20.piantalashop.model</servlet-class>
+ </servlet>
+  <servlet-mapping>
+     <servlet-name>DBconnection</servlet-name>
+     <url-pattern>/DBconnection/</url-pattern>
+ </servlet-mapping>
+ 
+ 
+</web-app>
