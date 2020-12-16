@@ -17,7 +17,7 @@ public class DBconnection {
 	         {
 	            e.printStackTrace();
 	         } 
-	         con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/piantalashop?user=root&password=ddpxbox96&serverTimezone=Europe/Rome");
+	         con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/piantalashop?user=root&password=&serverTimezone=Europe/Rome");
 	         System.out.println("Printing connection object "+con);
 	     } 
 	     catch (Exception e) 
