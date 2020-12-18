@@ -1,8 +1,9 @@
-<form action="<%=request.getContextPath()%>/" method="post">
+<form action="<%=request.getContextPath()%>/AnagraficaUpdate" method="post">
 <input name="id" type="hidden" value="<%= session.getAttribute("id")%>">
 <input name="nome_view" type="hidden" value="<%= session.getAttribute("username")%>">
 <input name="cognome_view" type="hidden" value="<%= session.getAttribute("cognome")%>">
 <input name="dnascita_view" type="hidden" value="<%= session.getAttribute("dnascita")%>">
+<input name="indirizzo_view" type="hidden" value="<%= session.getAttribute("indirizzo")%>">
 <input name="città_view" type="hidden" value="<%= session.getAttribute("città")%>">
 <input name="cap_view" type="hidden" value="<%= session.getAttribute("cap")%>">
 <input name="cellulare_view" type="hidden" value="<%= session.getAttribute("cellulare")%>">
@@ -24,10 +25,10 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <label>Città</label>
-      <input name="city"   type="text" class="form-control"  placeholder="<%= session.getAttribute("città")%>" maxlength="45" >
+      <input name="città"   type="text" class="form-control"  placeholder="<%= session.getAttribute("città")%>" maxlength="45" >
     </div>
  <div  class="form-group col-md-4">
-      <label>Indirizzo di residenza</label><label id="commentIndirizzoPrompt"></label>
+      <label>Indirizzo di residenza</label>
       <input name="indirizzo"  type="text"  class="form-control"  placeholder="<%= session.getAttribute("indirizzo")%>" >
   </div> 
         <div class="form-group col-md-4">

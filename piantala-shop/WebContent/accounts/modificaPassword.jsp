@@ -1,4 +1,4 @@
-<form action="<%=request.getContextPath()%>/" method="post" onsubmit="return stopsubmit2(this);">
+<form action="<%=request.getContextPath()%>/PasswordUpdate" method="post" onsubmit="return stopsubmit2(this);">
 <input name="id" type="hidden" value="<%= session.getAttribute("id")%>">
   <div class="form-group">
     <label>Password</label>

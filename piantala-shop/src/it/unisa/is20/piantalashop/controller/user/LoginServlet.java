@@ -1,4 +1,4 @@
-package it.unisa.is20.piantalashop.controller;
+package it.unisa.is20.piantalashop.controller.user;
 
 import java.io.IOException;
 //import java.io.PrintWriter;
@@ -138,7 +138,7 @@ public class LoginServlet extends HttpServlet {
          else
          {
              request.setAttribute("errorMessage", "Attenzione, credenziali errate. Riprova!"); 
-             request.getRequestDispatcher("accounts/login.jsp").forward(request, response);
+             request.getRequestDispatcher("/login.jsp").forward(request, response);
          }
     }
 }

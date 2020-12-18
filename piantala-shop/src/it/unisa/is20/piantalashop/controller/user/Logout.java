@@ -1,4 +1,4 @@
-package it.unisa.is20.piantalashop.controller;
+package it.unisa.is20.piantalashop.controller.user;
 
 import java.io.IOException;
 //import java.io.PrintWriter;
@@ -27,7 +27,7 @@ public class Logout extends HttpServlet {
         	 request.setAttribute("Message", "<div id=\"ServletMessage\" class=\"container center_div\" style=\" padding:15px;\">\n" + 
               		"	<div class=\"alert alert-success\" role=\"alert\">Log-out effettuato con successo! Per accedere nuovamente al tuo account rieffettua il log-in.</div>  </div>  "); 
            	 request.setAttribute("Messagemodal", "$('#ServletMessagem').modal('show');");
-             RequestDispatcher requestDispatcher = request.getRequestDispatcher("accounts/login.jsp");
+             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
              requestDispatcher.forward(request, response);
              System.out.println("Logout effettuato con successo");
          }

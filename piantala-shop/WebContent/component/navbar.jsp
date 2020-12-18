@@ -19,9 +19,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 			<%if((session.getAttribute("user")== null)){%>	
-        	<a class="dropdown-item" href="${pageContext.request.contextPath}/accounts/login.jsp">Login</a>
+        	<a class="dropdown-item" href="${pageContext.request.contextPath}/login.jsp">Login</a>
         	<div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="${pageContext.request.contextPath}/accounts/registration.jsp">Registrati</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/registration.jsp">Registrati</a>
         	<%}
         	else if ((session.getAttribute("ruolo").equals("admin"))){ %> 
           		<a class="dropdown-item" href="${pageContext.request.contextPath}/accounts/">Pannello admin</a>

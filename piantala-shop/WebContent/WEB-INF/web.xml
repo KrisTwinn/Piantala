@@ -21,8 +21,7 @@
     <error-code>405</error-code>
     <location>/405.html</location>
 </error-page> -->
- <!-- Ruoli -->
- 
+ <!-- Ruoli --> 
 <security-role>
     <role-name>admin</role-name>
 </security-role>
@@ -42,7 +41,7 @@
   <servlet>
      <display-name>LoginServlet</display-name>
      <servlet-name>LoginServlet</servlet-name>
-     <servlet-class>it.unisa.is20.piantalashop.controller</servlet-class>
+     <servlet-class>it.unisa.is20.piantalashop.controller.user</servlet-class>
  </servlet>
   <servlet-mapping>
      <servlet-name>LoginServlet</servlet-name>
@@ -78,11 +77,20 @@
 <servlet>
 	<display-name>Registration</display-name>
     <servlet-name>Registration</servlet-name>
-    <servlet-class>it.unisa.is20.piantalashop.controller</servlet-class>
+    <servlet-class>it.unisa.is20.piantalashop.controller.user</servlet-class>
 </servlet>
 <servlet-mapping>
      <servlet-name>Registration</servlet-name>
      <url-pattern>/Registration/</url-pattern>
 </servlet-mapping>
+ <servlet>
+     <display-name>AnagraficaUpdate</display-name>
+     <servlet-name>AnagraficaUpdate</servlet-name>
+     <servlet-class>it.unisa.is20.piantalashop.controller.user</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>AnagraficaUpdate</servlet-name>
+ 	<url-pattern>/AnagraficaUpdate/</url-pattern>
+ </servlet-mapping>
  
 </web-app>
