@@ -1,4 +1,4 @@
-package it.unisa.is20.piantalashop.controller.user;
+package it.unisa.is20.piantalashop.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
