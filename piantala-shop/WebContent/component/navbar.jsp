@@ -10,6 +10,15 @@
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+	
+	<%if((session.getAttribute("user") != null) ){%>
+	<li>
+    	<a class="navbar-brand">
+  		ruolo attuale: <%=session.getAttribute("ruolo")%></a>
+	</li>	
+	<%} %>
+	
+	
     	<li class="nav-item">
         	<a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">
 			<img src="${pageContext.request.contextPath}/assets/images/product.png" width="30" height="30" class="d-inline-block align-top" alt="logo-piantala">
@@ -33,6 +42,7 @@
   			about us</a>
 </li>
 
+
       	<li class="nav-item dropdown">
         	<a class="navbar-brand" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           	<img src="${pageContext.request.contextPath}/assets/images/profile.png" width="30" height="30" class="d-inline-block align-top" alt="logo-piantala">
@@ -44,11 +54,11 @@
         		<div class="dropdown-divider"></div>
             	<a class="dropdown-item" href="${pageContext.request.contextPath}/registration.jsp">Registrati</a>
         		<%}
-        		else if ((session.getAttribute("ruolo").equals("admin"))){ %> 
-          			<a class="dropdown-item" href="${pageContext.request.contextPath}/accounts/">Pannello admin</a>
+        		else if ((session.getAttribute("ruolo").equals("admin")) || session.getAttribute("ruolo").equals("responsabile")) { %> 
+          			<a class="dropdown-item" href="${pageContext.request.contextPath}/">Pannello admin</a>
           			<div class="dropdown-divider"></div>
           			<a class="dropdown-item" href="${pageContext.request.contextPath}/Logout">Logout</a>
-          			<%}else if ((session.getAttribute("ruolo").equals("user"))){ %> 
+          			<%}else if ((session.getAttribute("ruolo").equals("user")) || session.getAttribute("ruolo").equals("agricoltore")){ %> 
       					<a class="dropdown-item" href="${pageContext.request.contextPath}/accounts/dashboard.jsp">Dashboard</a>
       					<div class="dropdown-divider"></div>
       					<a class="dropdown-item" href="${pageContext.request.contextPath}/Logout">Logout</a>

@@ -77,8 +77,7 @@ public class Registration extends HttpServlet {
 			}
 		}else {   
 		out.print("Errore registrazione");
-		request.setAttribute("Message", "<div id=\"ServletMessage\" class=\"container center_div\" style=\" padding:15px;\">\n" + 
-	    "	<div class=\"alert alert-danger\" role=\"alert\"> Attenzione, la mail che hai inserito &egrave; gi&agrave; esistente! </div>  </div>  ");
+		request.setAttribute("Message", "Attenzione, la mail che hai inserito &egrave; gi&agrave; esistente!");
 		request.getRequestDispatcher("/registration.jsp").forward(request, response);//metodo per post per cambiare pagina
 		con.close();
 		out.print("Connessione chiusa");  }

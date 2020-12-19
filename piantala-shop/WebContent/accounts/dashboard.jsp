@@ -13,6 +13,7 @@
 <label>${Message}</label>
 <label>${errorMessage}</label>
 
+
 <div class="alert alert-success" role="alert">
   Modifica i tuoi dati personali qui!
 </div>
@@ -32,17 +33,19 @@
 </div>
 	<%@ include file="/accounts/modificaPassword.jsp"%>
 	<hr>
-	
+
 
 <div class="alert alert-success" role="alert">
   Altre azioni:
 </div>
+
 	<div class="d-flex justify-content-center">
 	<button type="button" class="btn btn-info">Visualizza i tuoi ordini</button>
-	<button type="button" class="btn btn-warning">Candidati come agricoltore</button>
+	
+	<p>Ruolo attuale: <%=session.getAttribute("ruolo")%></p> <button type="button" class="btn btn-warning">Candidati come agricoltore</button>
+	
 	<button type="button" class="btn btn-danger">Richiedi rimozione account</button>
 	</div>
-	
 
 	<%@ include file="/component/footer.html"%>
 </body>

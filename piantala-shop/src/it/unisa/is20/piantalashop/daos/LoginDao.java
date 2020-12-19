@@ -66,6 +66,23 @@ public class LoginDao {
                       loginBean.setEmail(email);
                       loginBean.setRuolo(ruoloDB);
                 	  return "normal_user";
+                  }else if(email.equals(emailDB) && password.equals(passwordDB) && ruoloDB.equals("agricoltore")) {
+                	  loginBean.setId(id);
+                	  loginBean.setNome(nome);
+                	  loginBean.setCognome(cognome);
+                	  loginBean.setDnascita(dnascita);
+                	  loginBean.setIndirizzo(indirizzo);
+                	  loginBean.setCittà(città);
+                	  loginBean.setCap(cap);
+                	  loginBean.setCellulare(cellulare);
+                      loginBean.setEmail(email);
+                      loginBean.setRuolo(ruoloDB);
+                	  return "agricoltore_user";
+                  }else if(email.equals(emailDB) && password.equals(passwordDB) && ruoloDB.equals("responsabile")) {
+                	  loginBean.setId(id);
+                      loginBean.setEmail(email);
+                      loginBean.setRuolo(ruoloDB);
+                	  return "responsabile_user";
                   }else return "wrong_login";
              }
              con.close();
