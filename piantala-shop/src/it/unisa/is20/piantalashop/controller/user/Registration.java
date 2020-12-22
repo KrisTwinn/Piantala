@@ -1,4 +1,4 @@
-package it.unisa.is20.piantalashop.controller;
+package it.unisa.is20.piantalashop.controller.user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -71,14 +71,14 @@ public class Registration extends HttpServlet {
 			if(i>0) {
 				System.out.println("Registrazione effettuata");
 				request.setAttribute("errMessage", "Registrazione completata! Effettua il login!");
-				request.getRequestDispatcher("/login.jsp").forward(request, response);//metodo per post per cambiare pagina
+				request.getRequestDispatcher("/view/login.jsp").forward(request, response);//metodo per post per cambiare pagina
 				con.close();
 				System.out.println("Connessione chiusa");
 			}
 		}else {   
 		out.print("Errore registrazione");
 		request.setAttribute("Message", "Attenzione, la mail che hai inserito &egrave; gi&agrave; esistente!");
-		request.getRequestDispatcher("/registration.jsp").forward(request, response);//metodo per post per cambiare pagina
+		request.getRequestDispatcher("/view/registration.jsp").forward(request, response);//metodo per post per cambiare pagina
 		con.close();
 		out.print("Connessione chiusa");  }
 		}

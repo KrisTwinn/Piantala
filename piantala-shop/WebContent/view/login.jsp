@@ -5,11 +5,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>login - piantala.org</title>
-<%@ include file="/component/css.html"%>
+<%@ include file="/view/component/css.html"%>
 </head>
 <body>
 
-	<%@ include file="/component/navbar.jsp"%>
+	<%@ include file="/view/component/navbar.jsp"%>
 	
 <form name="form" action="<%=request.getContextPath()%>/LoginServlet" method="post">
   <div class="form-group">
@@ -25,6 +25,6 @@
 </form>
 <div style="color:red;text-align:center">${errorMessage}</div>
 	
-	<%@ include file="/component/footer.html"%>
+	<%@ include file="/view/component/footer.html"%>
 </body>
 </html>

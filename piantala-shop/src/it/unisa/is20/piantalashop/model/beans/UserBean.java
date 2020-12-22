@@ -1,6 +1,6 @@
 package it.unisa.is20.piantalashop.model.beans;
 
-public class LoginBean {
+public class UserBean {
 	private int id;
 	private String nome;
 	private String cognome;

@@ -27,7 +27,7 @@ public class Logout extends HttpServlet {
         	 request.setAttribute("Message", "<div id=\"ServletMessage\" class=\"container center_div\" style=\" padding:15px;\">\n" + 
               		"	<div class=\"alert alert-success\" role=\"alert\">Log-out effettuato con successo! Per accedere nuovamente al tuo account rieffettua il log-in.</div>  </div>  "); 
            	 request.setAttribute("Messagemodal", "$('#ServletMessagem').modal('show');");
-             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
+             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/login.jsp");
              requestDispatcher.forward(request, response);
              System.out.println("Logout effettuato con successo");
          }

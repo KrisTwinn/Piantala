@@ -1,6 +1,6 @@
 package it.unisa.is20.piantalashop.model.beans;
 
-public class Product {
+public class ProductBean {
 	
 	private int idprodotto;
 	private String nomeprodotto;

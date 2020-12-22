@@ -40,7 +40,7 @@ public class EmailUpdate extends HttpServlet {
 			ps = con.prepareStatement(checkemail);
 			ResultSet rs = ps.executeQuery();
 			 if(rs.next()) {
-				 tempmail=rs.getString(9);
+				 tempmail=rs.getString(10);
 				 if(email.equals(tempmail)) {
 				 flag++;
 				 }
@@ -52,21 +52,23 @@ public class EmailUpdate extends HttpServlet {
 				 session.setAttribute("user", email);
 		         con.close();
 				 System.out.println("Mail profilo "+id+" aggiornata!");
-				 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/accounts/dashboard.jsp");
+				 request.setAttribute("Message", "Email aggiornata");
+				 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/view/accounts/dashboard.jsp");
 		            dispatcher.forward(request, response);
 			 }
 			 else {
+				 	System.out.println("la mail già esiste");
 				 	request.setAttribute("Message", "la mail che hai inserito esiste già");
-				 	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/accounts/dashboard.jsp");
+				 	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/view/accounts/dashboard.jsp");
 	            dispatcher.forward(request, response);
 				}
 		}
 		}
-		catch(Exception er) {}
+		catch(Exception e) {}
 		}
         else {
 			request.setAttribute("errorMessage", "Sessione scaduta, rieffettua il login, grazie!");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/view/login.jsp").forward(request, response);
 		}
 	}
 	}

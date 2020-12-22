@@ -5,19 +5,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import it.unisa.is20.piantalashop.model.beans.LoginBean;
+import it.unisa.is20.piantalashop.model.beans.UserBean;
 import it.unisa.is20.piantalashop.model.DBconnection;
  
-public class LoginDao {
-     public String authenticateUser(LoginBean loginBean)
+public class UserDao {
+     public String authenticateUser(UserBean UserBean)
      {
-         String email = loginBean.getEmail();
-         String password = loginBean.getPassword();
-
          Connection con = null;
          Statement statement = null;
          ResultSet resultSet = null;
          
+         String email = UserBean.getEmail();
+         String password = UserBean.getPassword();
          int id = 0;
          String nome = "";
          String cognome = "";
@@ -26,7 +25,6 @@ public class LoginDao {
          String città = "";
          int cap = 0;
          String cellulare = "";
-         
          String emailDB = "";
          String passwordDB = "";
          String ruoloDB = "";
@@ -50,38 +48,38 @@ public class LoginDao {
             	 ruoloDB = resultSet.getString("ruolo");
             	
               if(email.equals(emailDB) && password.equals(passwordDB) && ruoloDB.equals("admin")) {
-            	  loginBean.setId(id);
-            	  loginBean.setRuolo(ruoloDB);
+            	  UserBean.setId(id);
+            	  UserBean.setRuolo(ruoloDB);
                   return "admin_user";
               }
                   else if(email.equals(emailDB) && password.equals(passwordDB) && ruoloDB.equals("user")) {
-                	  loginBean.setId(id);
-                	  loginBean.setNome(nome);
-                	  loginBean.setCognome(cognome);
-                	  loginBean.setDnascita(dnascita);
-                	  loginBean.setIndirizzo(indirizzo);
-                	  loginBean.setCittà(città);
-                	  loginBean.setCap(cap);
-                	  loginBean.setCellulare(cellulare);
-                      loginBean.setEmail(email);
-                      loginBean.setRuolo(ruoloDB);
+                	  UserBean.setId(id);
+                	  UserBean.setNome(nome);
+                	  UserBean.setCognome(cognome);
+                	  UserBean.setDnascita(dnascita);
+                	  UserBean.setIndirizzo(indirizzo);
+                	  UserBean.setCittà(città);
+                	  UserBean.setCap(cap);
+                	  UserBean.setCellulare(cellulare);
+                      UserBean.setEmail(email);
+                      UserBean.setRuolo(ruoloDB);
                 	  return "normal_user";
                   }else if(email.equals(emailDB) && password.equals(passwordDB) && ruoloDB.equals("agricoltore")) {
-                	  loginBean.setId(id);
-                	  loginBean.setNome(nome);
-                	  loginBean.setCognome(cognome);
-                	  loginBean.setDnascita(dnascita);
-                	  loginBean.setIndirizzo(indirizzo);
-                	  loginBean.setCittà(città);
-                	  loginBean.setCap(cap);
-                	  loginBean.setCellulare(cellulare);
-                      loginBean.setEmail(email);
-                      loginBean.setRuolo(ruoloDB);
+                	  UserBean.setId(id);
+                	  UserBean.setNome(nome);
+                	  UserBean.setCognome(cognome);
+                	  UserBean.setDnascita(dnascita);
+                	  UserBean.setIndirizzo(indirizzo);
+                	  UserBean.setCittà(città);
+                	  UserBean.setCap(cap);
+                	  UserBean.setCellulare(cellulare);
+                      UserBean.setEmail(email);
+                      UserBean.setRuolo(ruoloDB);
                 	  return "agricoltore_user";
                   }else if(email.equals(emailDB) && password.equals(passwordDB) && ruoloDB.equals("responsabile")) {
-                	  loginBean.setId(id);
-                      loginBean.setEmail(email);
-                      loginBean.setRuolo(ruoloDB);
+                	  UserBean.setId(id);
+                      UserBean.setEmail(email);
+                      UserBean.setRuolo(ruoloDB);
                 	  return "responsabile_user";
                   }else return "wrong_login";
              }

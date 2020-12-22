@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Dashboard Utente</title>
-	<%@ include file="/component/css.html"%>
+	<%@ include file="/view/component/css.html"%>
 </head>
 <body>
-	<%@ include file="/component/navbar.jsp"%>
+	<%@ include file="/view/component/navbar.jsp"%>
 
 <label>${Message}</label>
 <label>${errorMessage}</label>
@@ -19,19 +19,19 @@
 </div>
 
 
-	<%@ include file="/accounts/anagrafica.jsp"%>
+	<%@ include file="/view/accounts/anagrafica.jsp"%>
 	<hr>
 <div class="alert alert-success" role="alert">
   Modifica la tua email qui!
 </div>
 
 
-	<%@ include file="/accounts/modificaEmail.jsp"%>
+	<%@ include file="/view/accounts/modificaEmail.jsp"%>
 	<hr>
 <div class="alert alert-success" role="alert">
   Modifica la tua password qui!
 </div>
-	<%@ include file="/accounts/modificaPassword.jsp"%>
+	<%@ include file="/view/accounts/modificaPassword.jsp"%>
 	<hr>
 
 
@@ -47,6 +47,6 @@
 	<button type="button" class="btn btn-danger">Richiedi rimozione account</button>
 	</div>
 
-	<%@ include file="/component/footer.html"%>
+	<%@ include file="/view/component/footer.html"%>
 </body>
 </html>

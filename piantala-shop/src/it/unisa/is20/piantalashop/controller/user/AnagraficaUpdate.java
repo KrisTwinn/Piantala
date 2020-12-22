@@ -69,13 +69,13 @@ private static final long serialVersionUID = 1L;
             session.setAttribute("dnascita", dnascita);
             session.setAttribute("cellulare", cellulare);
             request.setAttribute("Message", "profilo aggiornato"); 
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/accounts/dashboard.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/view/accounts/dashboard.jsp");
             dispatcher.forward(request, response);
 			}
 		catch(Exception er) {er.printStackTrace();}}
         else {
 			request.setAttribute("errorMessage", "Sessione scaduta, rieffettua il login, grazie!");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/view/login.jsp").forward(request, response);
 		}
 	}
 

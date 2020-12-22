@@ -5,11 +5,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>HOMEPAGE</title>
-<%@ include file="/component/css.html"%>
+<%@ include file="/view/component/css.html"%>
 </head>
 <body>
 
-	<%@ include file="/component/navbar.jsp"%>
+	<%@ include file="/view/component/navbar.jsp"%>
 
 <h1>HOME PAGE PIANTALA</h1>
 
@@ -20,11 +20,11 @@
 <p>loggato</p>
 <%} %>
 
-<img class="img-thumbnail" src="${pageContext.request.contextPath}/assets/pug.jpg" width="100" height="100" />
+<img class="img-thumbnail" src="${pageContext.request.contextPath}/view/assets/pug.jpg" width="100" height="100" />
 
-<a  href="${pageContext.request.contextPath}/accounts/login.jsp">Login</a>
+<a  href="${pageContext.request.contextPath}/view//login.jsp">Login</a>
 <a  href="${pageContext.request.contextPath}/Logout">Logout</a>
 
-	<%@ include file="/component/footer.html"%>
+	<%@ include file="/view/component/footer.html"%>
 </body>
 </html>

@@ -28,11 +28,11 @@ public class LoginServlet extends HttpServlet {
  
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        LoginBean loginBean = new LoginBean(); 
+        UserBean loginBean = new UserBean(); 
         loginBean.setEmail(email);
         loginBean.setPassword(password);
 
-        LoginDao loginDao = new LoginDao();
+        UserDao loginDao = new UserDao();
 
         String userValidate = loginDao.authenticateUser(loginBean); 
 
@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
              session.setAttribute("user", mails);
              session.setAttribute("ruolo", loginBean.getRuolo());
 
-             request.getRequestDispatcher("/index.jsp").forward(request, response); 
+             request.getRequestDispatcher("view/index.jsp").forward(request, response); 
          } 
         	else if(userValidate.equals("admin_user")){
         		
@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
         			session.setAttribute("user", "admin");
         			session.setAttribute("username", "admin");
             
-        			request.getRequestDispatcher("/index.jsp").forward(request, response);
+        			request.getRequestDispatcher("/view/index.jsp").forward(request, response);
         			System.out.println("Sessione per l'admin è stata creata con successo.");
                         
         		}
@@ -86,7 +86,7 @@ public class LoginServlet extends HttpServlet {
         					session.setAttribute("user", mails);
         					session.setAttribute("ruolo", loginBean.getRuolo());
             
-        					request.getRequestDispatcher("/index.jsp").forward(request, response);
+        					request.getRequestDispatcher("/view/index.jsp").forward(request, response);
         					System.out.println("Sessione per agricoltore stata creata con successo.");
             
             
@@ -99,13 +99,13 @@ public class LoginServlet extends HttpServlet {
         							session.setAttribute("user", "responsabile");
         							session.setAttribute("username", "responsabile");
             
-        							request.getRequestDispatcher("/index.jsp").forward(request, response);
+        							request.getRequestDispatcher("/view/index.jsp").forward(request, response);
         							System.out.println("Sessione per responsabile stata creata con successo.");
         				    }        
         					else
         					{
         						request.setAttribute("errorMessage", "Attenzione, credenziali errate. Riprova!"); 
-        						request.getRequestDispatcher("/login.jsp").forward(request, response);
+        						request.getRequestDispatcher("/view/login.jsp").forward(request, response);
          }
     }
 }

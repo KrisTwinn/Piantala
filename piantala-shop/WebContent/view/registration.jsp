@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registrazione</title>
-<%@ include file="/component/css.html"%>
+<%@ include file="/view/component/css.html"%>
 </head>
 <body>
-	<%@ include file="/component/navbar.jsp"%>
+	<%@ include file="/view/component/navbar.jsp"%>
 	
 	
 <form id=regvalidation name="form"action="<%=request.getContextPath()%>/Registration" method="post" onsubmit="">
@@ -70,6 +70,6 @@
 </form>
 	
 	
-	<%@ include file="/component/footer.html"%>
+	<%@ include file="/view/component/footer.html"%>
 </body>
 </html>

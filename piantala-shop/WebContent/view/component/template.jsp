@@ -5,14 +5,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-	<%@ include file="/component/css.html"%>
+	<%@ include file="/view/component/css.html"%>
 </head>
 <body>
-	<%@ include file="/component/navbar.jsp"%>
+	<%@ include file="/view/component/navbar.jsp"%>
 	
 	
 	
 	
-	<%@ include file="/component/footer.html"%>
+	<%@ include file="/view/component/footer.html"%>
 </body>
 </html>
