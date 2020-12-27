@@ -9,7 +9,7 @@ import it.unisa.is20.piantalashop.model.beans.UserBean;
 import it.unisa.is20.piantalashop.model.DBconnection;
  
 public class UserDao {
-     public String authenticateUser(UserBean UserBean)
+     public String userRole(UserBean UserBean)
      {
          Connection con = null;
          Statement statement = null;
@@ -91,5 +91,18 @@ public class UserDao {
              }
              return "Credenziali errate";
          }
+     
+     public String insertUser(UserBean UserBean) {
+		return null;
+     }
+     public String deleteUser(UserBean UserBean) {
+		return null;
+     }
+     public String updateUser(UserBean UserBean) {
+		return null;
+     }
+     public String viewUser(UserBean UserBean) {
+		return null;
+     }
      }
 

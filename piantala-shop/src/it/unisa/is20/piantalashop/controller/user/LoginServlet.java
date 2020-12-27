@@ -28,76 +28,76 @@ public class LoginServlet extends HttpServlet {
  
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        UserBean loginBean = new UserBean(); 
-        loginBean.setEmail(email);
-        loginBean.setPassword(password);
+        UserBean UserBean = new UserBean(); 
+        UserBean.setEmail(email);
+        UserBean.setPassword(password);
 
-        UserDao loginDao = new UserDao();
+        UserDao UserDao = new UserDao();
 
-        String userValidate = loginDao.authenticateUser(loginBean); 
+        String userValidateRole = UserDao.userRole(UserBean); 
 
-        if(userValidate.equals("normal_user"))
+        if(userValidateRole.equals("normal_user"))
          {	
 
-        	 String nome = loginBean.getNome();
-        	 String mails = loginBean.getEmail();
+        	 String nome = UserBean.getNome();
+        	 String mails = UserBean.getEmail();
              HttpSession session = request.getSession(true);
              session.setMaxInactiveInterval(10*60);
-             session.setAttribute("id", loginBean.getId());
-             session.setAttribute("username", nome);
-             session.setAttribute("cognome", loginBean.getCognome());
-             session.setAttribute("dnascita", loginBean.getDnascita());
-             session.setAttribute("indirizzo", loginBean.getIndirizzo());
-             session.setAttribute("città", loginBean.getCittà());
-             session.setAttribute("cap", loginBean.getCap());
-             session.setAttribute("cellulare", loginBean.getCellulare());
-             session.setAttribute("user", mails);
-             session.setAttribute("ruolo", loginBean.getRuolo());
+             session.setAttribute("id", UserBean.getId());
+             session.setAttribute("nome", nome);
+             session.setAttribute("cognome", UserBean.getCognome());
+             session.setAttribute("dnascita", UserBean.getDnascita());
+             session.setAttribute("indirizzo", UserBean.getIndirizzo());
+             session.setAttribute("città", UserBean.getCittà());
+             session.setAttribute("cap", UserBean.getCap());
+             session.setAttribute("cellulare", UserBean.getCellulare());
+             session.setAttribute("email", mails);
+             session.setAttribute("ruolo", UserBean.getRuolo());
 
              request.getRequestDispatcher("view/index.jsp").forward(request, response); 
          } 
-        	else if(userValidate.equals("admin_user")){
+        	else if(userValidateRole.equals("admin_user")){
         		
         			HttpSession session = request.getSession(true);
         			session.setMaxInactiveInterval(240*60);
-        			session.setAttribute("id", loginBean.getId());
-        			session.setAttribute("ruolo", loginBean.getRuolo());
-        			session.setAttribute("user", "admin");
-        			session.setAttribute("username", "admin");
+        			session.setAttribute("id", UserBean.getId());
+        			session.setAttribute("ruolo", UserBean.getRuolo());
+        			session.setAttribute("email", "admin");
+        			session.setAttribute("nome", "admin");
             
         			request.getRequestDispatcher("/view/index.jsp").forward(request, response);
         			System.out.println("Sessione per l'admin Ã¨ stata creata con successo.");
                         
         		}
-        			else if(userValidate.equals("agricoltore_user")){
+        			else if(userValidateRole.equals("agricoltore_user")){
         				
-        					String nome = loginBean.getNome();
-        					String mails = loginBean.getEmail();
+        					String nome = UserBean.getNome();
+        					String mails = UserBean.getEmail();
         					HttpSession session = request.getSession(true);
         					session.setMaxInactiveInterval(10*60);
-        					session.setAttribute("id", loginBean.getId());
-        					session.setAttribute("username", nome);
-        					session.setAttribute("cognome", loginBean.getCognome());
-        					session.setAttribute("dnascita", loginBean.getDnascita());
-        					session.setAttribute("indirizzo", loginBean.getIndirizzo());
-        					session.setAttribute("città", loginBean.getCittà());
-        					session.setAttribute("cap", loginBean.getCap());
-        					session.setAttribute("cellulare", loginBean.getCellulare());
-        					session.setAttribute("user", mails);
-        					session.setAttribute("ruolo", loginBean.getRuolo());
+        					session.setAttribute("id", UserBean.getId());
+        					session.setAttribute("nome", nome);
+        					session.setAttribute("cognome", UserBean.getCognome());
+        					session.setAttribute("dnascita", UserBean.getDnascita());
+        					session.setAttribute("indirizzo", UserBean.getIndirizzo());
+        					session.setAttribute("città", UserBean.getCittà());
+        					session.setAttribute("cap", UserBean.getCap());
+        					session.setAttribute("cellulare", UserBean.getCellulare());
+        					session.setAttribute("email", mails);
+        					session.setAttribute("ruolo", UserBean.getRuolo());
             
         					request.getRequestDispatcher("/view/index.jsp").forward(request, response);
         					System.out.println("Sessione per agricoltore stata creata con successo.");
             
             
-        					}else if(userValidate.equals("responsabile_user")){
+        					}else if(userValidateRole.equals("responsabile_user")){
         						
         							HttpSession session = request.getSession(true);
         							session.setMaxInactiveInterval(240*60);
-        							session.setAttribute("id", loginBean.getId());
-        							session.setAttribute("ruolo", loginBean.getRuolo());
-        							session.setAttribute("user", "responsabile");
-        							session.setAttribute("username", "responsabile");
+        							session.setAttribute("id", UserBean.getId());
+        							session.setAttribute("ruolo", UserBean.getRuolo());
+        							session.setAttribute("email", "responsabile");
+        							session.setAttribute("nome", "responsabile");
             
         							request.getRequestDispatcher("/view/index.jsp").forward(request, response);
         							System.out.println("Sessione per responsabile stata creata con successo.");

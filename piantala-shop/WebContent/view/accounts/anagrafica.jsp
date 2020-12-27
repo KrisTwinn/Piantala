@@ -1,6 +1,6 @@
 <form action="<%=request.getContextPath()%>/AnagraficaUpdate" method="post">
 <input name="id" type="hidden" value="<%= session.getAttribute("id")%>">
-<input name="nome_view" type="hidden" value="<%= session.getAttribute("username")%>">
+<input name="nome_view" type="hidden" value="<%= session.getAttribute("nome")%>">
 <input name="cognome_view" type="hidden" value="<%= session.getAttribute("cognome")%>">
 <input name="dnascita_view" type="hidden" value="<%= session.getAttribute("dnascita")%>">
 <input name="indirizzo_view" type="hidden" value="<%= session.getAttribute("indirizzo")%>">
@@ -11,7 +11,7 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <label>Nome</label>
-      <input name="nome"  type="text" class="form-control"  placeholder="<%= session.getAttribute("username")%>" maxlength="45" >
+      <input name="nome"  type="text" class="form-control"  placeholder="<%= session.getAttribute("nome")%>" maxlength="45" >
     </div>
     <div class="form-group col-md-4">
       <label>Cognome</label>

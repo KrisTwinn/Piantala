@@ -8,7 +8,7 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 	
-	<%if((session.getAttribute("user") != null) ){%>
+	<%if((session.getAttribute("email") != null) ){%>
 		<li>
     	<a class="navbar-brand">
   		ruolo attuale: <%=session.getAttribute("ruolo")%></a>
@@ -24,7 +24,7 @@
 
 
 	<li class="nav-item">
-		<%if((session.getAttribute("user")== null) ){%>
+		<%if((session.getAttribute("email")== null) ){%>
 		<%}else{%>
     	<a class="navbar-brand" href="${pageContext.request.contextPath}/view/index.jsp">
 		<img src="${pageContext.request.contextPath}/view/assets/images/cart.png" width="30" height="30" class="d-inline-block align-top" alt="logo-piantala">
@@ -47,7 +47,7 @@
     </a>
     	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
     	
-			<%if((session.getAttribute("user")== null)){%>	
+			<%if((session.getAttribute("email")== null)){%>	
         		<a class="dropdown-item" href="${pageContext.request.contextPath}/view/login.jsp">Login</a>
         		<div class="dropdown-divider"></div>
             	<a class="dropdown-item" href="${pageContext.request.contextPath}/view/registration.jsp">Registrati</a>
